@@ -30,39 +30,6 @@ document.addEventListener('fullscreenchange', () => {
 // ===================== QUIZ =====================
 const quizData = [
   {
-    question: "O que a Doutrina Truman (1947) estabeleceu?",
-    options: [
-      "A contenção do comunismo em qualquer parte do mundo",
-      "A reunificação imediata da Alemanha",
-      "O fim da corrida armamentista",
-      "A criação da ONU"
-    ],
-    correct: 0,
-    feedback: "A Doutrina Truman marcou o compromisso dos EUA em conter a expansão comunista globalmente, servindo de base ideológica para décadas de intervenções."
-  },
-  {
-    question: "O que simbolizou a construção do Muro de Berlim em 1961?",
-    options: [
-      "O fim da Guerra Fria",
-      "A divisão física e ideológica entre os blocos capitalista e socialista",
-      "Uma aliança entre EUA e URSS",
-      "A independência da Alemanha Oriental"
-    ],
-    correct: 1,
-    feedback: "O Muro de Berlim se tornou o símbolo mais concreto da Cortina de Ferro, separando famílias e materializando a divisão entre os dois blocos."
-  },
-  {
-    question: "Qual evento levou o mundo mais perto de uma guerra nuclear direta entre EUA e URSS?",
-    options: [
-      "O lançamento do Sputnik",
-      "A Guerra da Coreia",
-      "A Crise dos Mísseis de Cuba (1962)",
-      "A Queda do Muro de Berlim"
-    ],
-    correct: 2,
-    feedback: "Em 1962, a instalação de mísseis soviéticos em Cuba levou os EUA e a URSS a treze dias de tensão extrema, o momento mais próximo de um confronto nuclear direto."
-  },
-  {
     question: "Como a Guerra Fria transformou a história da América Latina?",
     options: [
       "Promovendo a estabilidade democrática e o livre comércio através de alianças pacíficas entre os governos locais e a União Soviética",
@@ -73,17 +40,6 @@ const quizData = [
     ],
     correct: 3,
     feedback: "Temendo 'novas Cubas', os EUA apoiaram ditaduras militares anticomunistas alinhadas à Doutrina de Segurança Nacional, incluindo a repressão coordenada da Operação Condor."
-  },
-  {
-    question: "O que foi a Operação Condor?",
-    options: [
-      "Uma missão espacial conjunta EUA-URSS",
-      "Um acordo de desarmamento nuclear",
-      "Uma rede de cooperação entre ditaduras do Cone Sul para perseguir opositores",
-      "Um plano de reconstrução econômica da América Latina"
-    ],
-    correct: 2,
-    feedback: "A Operação Condor articulou ditaduras sul-americanas em uma rede secreta de repressão transnacional, com apoio de inteligência dos Estados Unidos."
   }
 ];
 
