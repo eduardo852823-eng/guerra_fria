@@ -1,45 +1,257 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Guerra Fria | Apresentação</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guerra Fria — Um Mundo Dividido</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="btn-fs" onclick="toggleFullscreen()">Tela Cheia</button>
-    <section id="sec1">
-        <div class="content-wrapper">
-            <h1>A Origem do Conflito</h1>
-            <p class="subtitle">EUA vs URSS: A disputa por influência global.</p>
-        </div>
-    </section>
-    <section id="sec2">
-        <div class="content-wrapper">
-            <h1>Momentos Críticos</h1>
-            <p class="subtitle">Muro de Berlim, Mísseis em Cuba e Corrida Espacial.</p>
-        </div>
-    </section>
-    <section id="sec3">
-        <div class="content-wrapper">
-            <h1>Pergunta de Verificação</h1>
-            <p class="subtitle">Como a Guerra Fria transformou a história da América Latina?</p>
-            <div class="quiz-options">
-                <button class="option-btn" onclick="checkAnswer(false)">A) Promoveu uma era de paz e neutralidade total.</button>
-                <button class="option-btn" onclick="checkAnswer(true)">B) Impulsionou o apoio a regimes militares e ditaduras.</button>
-                <button class="option-btn" onclick="checkAnswer(false)">C) Isolou o continente de qualquer influência estrangeira.</button>
-            </div>
-            <div id="feedback"></div>
-        </div>
-    </section>
-    <section id="sec4">
-        <div class="content-wrapper">
-            <h1>Fim</h1>
-            <div class="integrantes">
-                <p><strong>Integrantes:</strong></p>
-                <p>Eduardo • Alice • Lídia • Julia • Clara • Pedro Antônio</p>
-            </div>
-        </div>
-    </section>
-    <script src="script.js"></script>
+
+<div class="curtain-cursor" aria-hidden="true"></div>
+
+<nav class="topbar">
+  <span class="brand">GUERRA FRIA <span class="brand-dates">1947—1991</span></span>
+  <div class="nav-links">
+    <a href="#origens">Origens</a>
+    <a href="#tensao">Tensão</a>
+    <a href="#america-latina">América Latina</a>
+    <a href="#quiz">Quiz</a>
+  </div>
+  <button id="fullscreenBtn" class="fs-btn" title="Tela cheia" aria-label="Alternar tela cheia">
+    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M4 4h6v2H6v4H4V4zm10 0h6v6h-2V6h-4V4zM4 14h2v4h4v2H4v-6zm16 0h-2v4h-4v2h6v-6z"/></svg>
+  </button>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="topo">
+  <div class="hero-bg"></div>
+  <div class="hero-split">
+    <div class="side side-west">
+      <span class="side-label">CAPITALISMO</span>
+    </div>
+    <div class="side side-east">
+      <span class="side-label">SOCIALISMO</span>
+    </div>
+  </div>
+  <div class="hero-content">
+    <p class="eyebrow">Um projeto histórico-visual</p>
+    <h1 class="hero-title">A Guerra <span class="crack">Fria</span></h1>
+    <p class="hero-sub">Duas superpotências. Um planeta dividido ao meio por um muro invisível de ideologia, medo e ambição — que quase nunca disparou um único tiro direto, e mesmo assim reescreveu o destino de dezenas de nações.</p>
+    <div class="hero-meta">
+      <div class="meta-item"><span class="meta-num">44</span><span class="meta-label">anos de tensão</span></div>
+      <div class="meta-item"><span class="meta-num">2</span><span class="meta-label">blocos rivais</span></div>
+      <div class="meta-item"><span class="meta-num">∞</span><span class="meta-label">guerras por procuração</span></div>
+    </div>
+    <a href="#origens" class="scroll-cue">Explorar a linha do tempo ↓</a>
+  </div>
+</header>
+
+<!-- ============ ORIGENS ============ -->
+<section class="section" id="origens">
+  <div class="section-head">
+    <span class="tag">01 — Origens</span>
+    <h2>De aliados a adversários</h2>
+    <p class="section-intro">Em 1945, os escombros da Segunda Guerra Mundial deixaram apenas duas potências de pé. O que restou não foi paz — foi um vácuo de poder que os Estados Unidos e a União Soviética passariam quase meio século disputando.</p>
+  </div>
+
+  <div class="origins-grid">
+    <article class="origin-card">
+      <span class="origin-year">1945</span>
+      <h3>Yalta e Potsdam</h3>
+      <p>Com a Alemanha nazista derrotada, os vencedores se reúnem para desenhar o mapa do pós-guerra. A divisão da Europa em zonas de influência planta a semente da rivalidade.</p>
+    </article>
+    <article class="origin-card">
+      <span class="origin-year">1947</span>
+      <h3>Doutrina Truman</h3>
+      <p>Os EUA declaram que conterão a expansão comunista em qualquer lugar do globo, inaugurando oficialmente a política de <em>contenção</em> que guiaria décadas de intervenções.</p>
+    </article>
+    <article class="origin-card">
+      <span class="origin-year">1947</span>
+      <h3>Plano Marshall</h3>
+      <p>Bilhões de dólares reconstroem a Europa Ocidental — e a atrelam economicamente ao capitalismo americano, aprofundando a fratura com o bloco soviético.</p>
+    </article>
+    <article class="origin-card">
+      <span class="origin-year">1949</span>
+      <h3>Dois mundos, duas Alemanhas</h3>
+      <p>A criação da RFA (capitalista) e da RDA (socialista) transforma um único país no símbolo mais literal da divisão global.</p>
+    </article>
+  </div>
+
+  <div class="ideology-compare">
+    <div class="ideology-col west-col">
+      <h4>Bloco Capitalista</h4>
+      <ul>
+        <li>Liderança dos Estados Unidos</li>
+        <li>Economia de mercado e propriedade privada</li>
+        <li>Aliança militar: OTAN (1949)</li>
+        <li>Defesa da democracia liberal</li>
+      </ul>
+    </div>
+    <div class="ideology-divider">
+      <span>VS</span>
+    </div>
+    <div class="ideology-col east-col">
+      <h4>Bloco Socialista</h4>
+      <ul>
+        <li>Liderança da União Soviética</li>
+        <li>Planejamento central e coletivização</li>
+        <li>Aliança militar: Pacto de Varsóvia (1955)</li>
+        <li>Defesa do socialismo de partido único</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TENSÃO ============ -->
+<section class="section section-dark" id="tensao">
+  <div class="section-head">
+    <span class="tag">02 — Pontos de Ruptura</span>
+    <h2>Os momentos em que o mundo prendeu a respiração</h2>
+    <p class="section-intro">A guerra nunca foi declarada diretamente entre as duas potências — mas em vários instantes, o planeta esteve a um erro de cálculo da catástrofe.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-line" aria-hidden="true"></div>
+
+    <div class="tl-event">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-year">1948–1949</span>
+        <h3>Bloqueio de Berlim</h3>
+        <p>A URSS corta o acesso terrestre a Berlim Ocidental. Os Aliados respondem com uma ponte aérea histórica, abastecendo a cidade por quase um ano sem disparar um tiro.</p>
+      </div>
+    </div>
+
+    <div class="tl-event reverse">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-year">1957–1969</span>
+        <h3>Corrida Espacial</h3>
+        <p>O lançamento do Sputnik em 1957 humilha os EUA e dispara uma disputa tecnológica sem precedentes — que culmina na chegada do homem à Lua em 1969, vitória simbólica americana.</p>
+      </div>
+    </div>
+
+    <div class="tl-event">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-year">1961</span>
+        <h3>O Muro de Berlim</h3>
+        <p>Concreto e arame farpado dividem uma cidade da noite para o dia. O Muro se torna a imagem mais duradoura da Cortina de Ferro, separando famílias por 28 anos.</p>
+      </div>
+    </div>
+
+    <div class="tl-event reverse">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-year">1962</span>
+        <h3>Crise dos Mísseis de Cuba</h3>
+        <p>Mísseis soviéticos a 150 km da Flórida levam o mundo a treze dias à beira de uma guerra nuclear. A crise termina em negociação — e no telefone vermelho entre Washington e Moscou.</p>
+      </div>
+    </div>
+
+    <div class="tl-event">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-year">1989</span>
+        <h3>Queda do Muro</h3>
+        <p>Multidões derrubam o Muro de Berlim com as próprias mãos. O símbolo maior da divisão vira o símbolo maior do seu fim.</p>
+      </div>
+    </div>
+
+    <div class="tl-event reverse">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <span class="tl-year">1991</span>
+        <h3>Fim da URSS</h3>
+        <p>A União Soviética se dissolve oficialmente. O mundo bipolar dá lugar a uma nova — e incerta — ordem global.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AMÉRICA LATINA ============ -->
+<section class="section section-latam" id="america-latina">
+  <div class="section-head">
+    <span class="tag">03 — Aprofundamento</span>
+    <h2>Como a Guerra Fria transformou a América Latina?</h2>
+    <p class="section-intro">Longe dos holofotes de Berlim e Washington, foi no chamado "Terceiro Mundo" que a Guerra Fria se tornou mais quente — e a América Latina foi um dos seus principais tabuleiros.</p>
+  </div>
+
+  <div class="latam-answer">
+    <p class="latam-lead">A resposta direta: a Guerra Fria transformou a América Latina em campo de batalha ideológico indireto, onde os EUA — temendo "novas Cubas" — apoiaram ditaduras militares anticomunistas, enquanto movimentos de esquerda inspirados na Revolução Cubana buscavam romper com décadas de desigualdade e influência americana.</p>
+  </div>
+
+  <div class="latam-grid">
+    <div class="latam-block">
+      <h3>A centelha: Revolução Cubana (1959)</h3>
+      <p>Fidel Castro derruba a ditadura de Batista e, em poucos anos, alinha Cuba à URSS. Pela primeira vez, o socialismo se instala a poucos quilômetros dos EUA — e Washington passa a tratar toda a região como zona de risco.</p>
+    </div>
+    <div class="latam-block">
+      <h3>A resposta: Doutrina de Segurança Nacional</h3>
+      <p>Os EUA passam a apoiar, treinar e financiar Forças Armadas latino-americanas para conter o "perigo comunista" interno — mesmo que isso significasse derrubar governos eleitos democraticamente.</p>
+    </div>
+    <div class="latam-block">
+      <h3>A onda de ditaduras militares</h3>
+      <p>Entre as décadas de 1960 e 1980, golpes de Estado instalam regimes autoritários no Brasil (1964), Chile (1973), Argentina (1976) e outros países, com perseguição sistemática a opositores, censura e violação de direitos humanos.</p>
+    </div>
+    <div class="latam-block">
+      <h3>A Operação Condor</h3>
+      <p>Ditaduras do Cone Sul articulam uma rede secreta de cooperação para perseguir, sequestrar e eliminar opositores políticos além das próprias fronteiras — com apoio de inteligência dos EUA.</p>
+    </div>
+    <div class="latam-block">
+      <h3>Guerrilhas e movimentos revolucionários</h3>
+      <p>Grupos armados de esquerda surgem em resposta à repressão, como o Sandinismo na Nicarágua e movimentos guerrilheiros na Colômbia e na América Central, alimentando décadas de conflito interno.</p>
+    </div>
+    <div class="latam-block">
+      <h3>Legado até hoje</h3>
+      <p>O trauma das ditaduras, o atraso democrático e as marcas econômicas dessas décadas ainda moldam a política, a memória coletiva e as disputas ideológicas da América Latina contemporânea.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUIZ ============ -->
+<section class="section section-dark" id="quiz">
+  <div class="section-head">
+    <span class="tag">04 — Verifique seu conhecimento</span>
+    <h2>Quiz: Guerra Fria</h2>
+    <p class="section-intro">Cinco perguntas para testar o que você acabou de aprender. Selecione uma alternativa em cada questão.</p>
+  </div>
+
+  <div class="quiz-wrap">
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar" id="quizProgressBar"></div>
+    </div>
+    <div id="quizContainer"></div>
+
+    <div id="quizResult" class="quiz-result hidden">
+      <h3>Resultado</h3>
+      <p id="quizScoreText"></p>
+      <button id="quizRestart" class="btn-primary">Refazer o quiz</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENCERRAMENTO ============ -->
+<section class="closing" id="creditos">
+  <div class="closing-bg"></div>
+  <div class="closing-content">
+    <p class="eyebrow">Trabalho apresentado por</p>
+    <h2 class="closing-title">O Grupo</h2>
+    <ul class="credits-list">
+      <li>Eduardo</li>
+      <li>Alice</li>
+      <li>Lídia</li>
+      <li>Julia</li>
+      <li>Clara</li>
+      <li>Pedro Antônio</li>
+    </ul>
+    <p class="closing-footer">Guerra Fria — 1947 · 1991</p>
+  </div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
