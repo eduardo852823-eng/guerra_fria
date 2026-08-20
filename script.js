@@ -1,17 +1,19 @@
 
-function requestFS() {
+function toggleFullscreen() {
     const btn = document.querySelector('.btn-fs');
-    btn.classList.add('hidden');
-    document.documentElement.requestFullscreen();
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+        btn.classList.add('hidden');
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
 }
 
-document.addEventListener("keydown", (e) => { 
-    if(e.key === "f") requestFS(); 
-});
-
-// Detectar saída do modo tela cheia para mostrar o botão novamente
 document.addEventListener("fullscreenchange", () => {
+    const btn = document.querySelector('.btn-fs');
     if (!document.fullscreenElement) {
-        document.querySelector('.btn-fs').classList.remove('hidden');
+        btn.classList.remove('hidden');
     }
 });

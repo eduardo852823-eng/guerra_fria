@@ -2,71 +2,86 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Apresentação: A Guerra Fria</title>
+    <title>Guerra Fria | Apresentação</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3214/3214742.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <button class="btn-fs" onclick="requestFS()">Entrar em Tela Cheia</button>
+    <button class="btn-fs" onclick="toggleFullscreen()">Tela Cheia</button>
 
-    <main class="container">
-        <section>
-            <h1>Guerra Fria</h1>
-            <p style="text-align: center; font-size: 1.5rem; max-width: 800px; margin: auto;">Um conflito ideológico, político e militar que moldou o mundo moderno entre 1945 e 1991. Entenda as forças que dividiram o planeta.</p>
-            <div class="grid-3" style="margin-top: 80px;">
-                <div class="card">
-                    <h3>O Contexto Pós-Guerra</h3>
-                    <p>Após a derrota do Eixo em 1945, o vácuo de poder na Europa foi preenchido por duas visões de mundo opostas. O mundo não estava mais em guerra total, mas em um estado de "paz armada".</p>
+    <!-- TELA 1 (PESSOA 1) -->
+    <section id="sec1">
+        <div class="content-wrapper">
+            <div class="apresentador-tag">Parte 1 • Introdução e Divisão</div>
+            <h1>A Origem do Conflito</h1>
+            <p class="subtitle">Em 1945, com o fim da Segunda Guerra, o mundo deixou de ter uma guerra armada tradicional e entrou em uma disputa invisível pelo poder global.</p>
+            
+            <div class="cards-grid">
+                <div class="card-minimal">
+                    <h3>O Contexto</h3>
+                    <p>EUA e URSS sobraram como as únicas superpotências. Mas pensavam totalmente diferente sobre como o mundo deveria funcionar.</p>
                 </div>
-                <div class="card">
-                    <h3>O Modelo Americano</h3>
-                    <p>Baseado no capitalismo liberal e na democracia representativa. Os EUA lideraram a OTAN, buscando conter a expansão soviética através da Doutrina Truman e do Plano Marshall.</p>
+                <div class="card-minimal">
+                    <h3>O Bloco Capitalista (EUA)</h3>
+                    <p>Defendia a economia livre, empresas privadas e governos democráticos. Lideraram a aliança militar da OTAN.</p>
                 </div>
-                <div class="card">
-                    <h3>O Modelo Soviético</h3>
-                    <p>Baseado no socialismo de estado e economia planificada. A URSS expandiu seu controle sobre o Leste Europeu através do Pacto de Varsóvia, priorizando a segurança interna e o controle estatal.</p>
+                <div class="card-minimal">
+                    <h3>O Bloco Socialista (URSS)</h3>
+                    <p>Defendia o controle total da economia pelo Estado e partido único. Expandiu sua influência pelo Leste Europeu.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <h2>Momentos de Tensão Máxima</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>A Construção do Muro</h3>
-                    <p>O Muro de Berlim não foi apenas concreto, foi uma cicatriz ideológica. Representava a incapacidade de coexistência entre os sistemas, separando famílias e destinos por décadas.</p>
+    <!-- TELA 2 (PESSOA 2) -->
+    <section id="sec2">
+        <div class="content-wrapper">
+            <div class="apresentador-tag">Parte 2 • Momentos Críticos</div>
+            <h1>Quando o Mundo Quase Acabou</h1>
+            <p class="subtitle">A rivalidade gerou momentos de tensão extrema, onde qualquer erro poderia iniciar uma guerra nuclear catastrófica.</p>
+            
+            <div class="cards-grid">
+                <div class="card-minimal">
+                    <h3>O Muro de Berlim</h3>
+                    <p>Construído em 1961 para impedir que pessoas fugissem do lado soviético. Virou o maior símbolo físico da divisão do planeta.</p>
                 </div>
-                <div class="card">
+                <div class="card-minimal">
                     <h3>A Crise dos Mísseis</h3>
-                    <p>Em 1962, o mundo parou. Mísseis soviéticos em Cuba colocaram EUA e URSS à beira do abismo nuclear. A diplomacia foi a única barreira contra a aniquilação total.</p>
+                    <p>Em 1962, mísseis soviéticos foram descobertos em Cuba. Foram 13 dias de tensão máxima entre EUA e URSS à beira de um ataque nuclear.</p>
                 </div>
-                <div class="card">
+                <div class="card-minimal">
                     <h3>A Corrida Espacial</h3>
-                    <p>Mais do que explorar o céu, era uma disputa de prestígio tecnológico. Cada lançamento, do Sputnik à chegada do homem na Lua, servia como propaganda política da superioridade de cada bloco.</p>
+                    <p>Sem poder lutar diretamente, EUA e URSS competiram para ver quem dominava a tecnologia e chegava primeiro ao espaço e à Lua.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <h2>O Fim da Era</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Glasnost e Perestroika</h3>
-                    <p>Gorbachev tentou salvar o sistema soviético com "transparência" e "reestruturação", mas as mudanças acabaram dando liberdade para que as pressões internas derrubassem o regime.</p>
+    <!-- TELA 3 (PESSOA 3) -->
+    <section id="sec3">
+        <div class="content-wrapper">
+            <div class="apresentador-tag">Parte 3 • O Fim e o Legado</div>
+            <h1>O Colapso e o Presente</h1>
+            <p class="subtitle">Gastos militares absurdos e crises econômicas internas enfraqueceram a União Soviética até o seu fim definitivo.</p>
+            
+            <div class="cards-grid">
+                <div class="card-minimal">
+                    <h3>As Reformas</h3>
+                    <p>O líder soviético Gorbachev tentou salvar o país dando mais liberdade econômica e transparência, mas o plano saiu do controle.</p>
                 </div>
-                <div class="card">
-                    <h3>A Queda e a Unificação</h3>
-                    <p>Em 1989, o povo tomou as ruas. O Muro de Berlim caiu, simbolizando a desintegração do controle soviético na Europa e o desejo de reunificação democrática.</p>
+                <div class="card-minimal">
+                    <h3>A Queda de 1989</h3>
+                    <p>O Muro de Berlim caiu com a pressão popular, marcando o fim do domínio soviético na Europa e o encerramento iminente da guerra.</p>
                 </div>
-                <div class="card">
-                    <h3>Um Novo Mundo</h3>
-                    <p>A dissolução da URSS em 1991 selou o fim. O mundo passou de um sistema bipolar para uma globalização complexa, com alianças e tensões que persistem até os dias atuais.</p>
+                <div class="card-minimal">
+                    <h3>O Legado Atual</h3>
+                    <p>A Guerra Fria terminou em 1991 com o fim da URSS, mas moldou as fronteiras, alianças e tensões políticas que vemos no mundo de hoje.</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
