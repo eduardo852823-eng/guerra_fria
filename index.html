@@ -1,67 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Guerra Fria | Apresentação</title>
-<!-- Ícone no site -->
-<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3214/3214742.png">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
-<style>
-:root { --bg: #050505; --accent: #ff4d4d; --text: #e0e0e0; }
-body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Outfit', sans-serif; }
-.container { width: 85%; margin: auto; max-width: 1200px; }
-
-/* Títulos com fonte elegante */
-h1 { font-family: 'Playfair Display', serif; font-size: 5rem; color: #fff; margin-bottom: 10px; }
-h2 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--accent); }
-
-section { min-height: 90vh; padding: 100px 0; border-bottom: 1px solid #222; }
-.btn-fs { background: var(--accent); color: white; padding: 20px 40px; border-radius: 50px; cursor: pointer; border: none; font-weight: bold; position: fixed; bottom: 30px; right: 30px; z-index: 1000; box-shadow: 0 10px 20px rgba(255,77,77,0.3); }
-
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.card { background: #111; padding: 30px; border-radius: 20px; border-left: 4px solid var(--accent); }
-@media(max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } h1 { font-size: 3rem; } }
-</style>
+    <meta charset="UTF-8">
+    <title>Apresentação: A Guerra Fria</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3214/3214742.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<button class="btn-fs" onclick="document.documentElement.requestFullscreen()">Tela Cheia (F11)</button>
+    <button class="btn-fs" onclick="requestFS()">Entrar em Tela Cheia</button>
 
-<main class="container">
-  <!-- PESSOA 1: CONTEXTO -->
-  <section>
-    <h1>Guerra Fria</h1>
-    <p style="font-size: 1.5rem;">A disputa geopolítica que dividiu o mundo entre 1945 e 1991.</p>
-    <div class="grid-3" style="margin-top: 40px;">
-      <div class="card"><h3>O Contexto</h3><p>Pós-Segunda Guerra: EUA e URSS emergem como as únicas superpotências mundiais.</p></div>
-      <div class="card"><h3>EUA (Capitalismo)</h3><p>Defesa da propriedade privada, liberalismo econômico e influência na Europa Ocidental.</p></div>
-      <div class="card"><h3>URSS (Socialismo)</h3><p>Economia planificada, partido único e forte expansão de influência na Europa Oriental.</p></div>
-    </div>
-  </section>
+    <main class="container">
+        <section>
+            <h1>Guerra Fria</h1>
+            <p style="text-align: center; font-size: 1.5rem; max-width: 800px; margin: auto;">Um conflito ideológico, político e militar que moldou o mundo moderno entre 1945 e 1991. Entenda as forças que dividiram o planeta.</p>
+            <div class="grid-3" style="margin-top: 80px;">
+                <div class="card">
+                    <h3>O Contexto Pós-Guerra</h3>
+                    <p>Após a derrota do Eixo em 1945, o vácuo de poder na Europa foi preenchido por duas visões de mundo opostas. O mundo não estava mais em guerra total, mas em um estado de "paz armada".</p>
+                </div>
+                <div class="card">
+                    <h3>O Modelo Americano</h3>
+                    <p>Baseado no capitalismo liberal e na democracia representativa. Os EUA lideraram a OTAN, buscando conter a expansão soviética através da Doutrina Truman e do Plano Marshall.</p>
+                </div>
+                <div class="card">
+                    <h3>O Modelo Soviético</h3>
+                    <p>Baseado no socialismo de estado e economia planificada. A URSS expandiu seu controle sobre o Leste Europeu através do Pacto de Varsóvia, priorizando a segurança interna e o controle estatal.</p>
+                </div>
+            </div>
+        </section>
 
-  <!-- PESSOA 2: TENSÕES -->
-  <section>
-    <h2>Momentos Críticos</h2>
-    <div class="grid-3" style="margin-top: 40px;">
-      <div class="card"><h3>O Muro de Berlim</h3><p>Símbolo máximo da divisão. Dividia ideologias, cidades e famílias por décadas.</p></div>
-      <div class="card"><h3>Crise dos Mísseis</h3><p>O momento mais próximo de um conflito nuclear direto entre EUA, Cuba e URSS.</p></div>
-      <div class="card"><h3>Corridas Espaciais</h3><p>A tecnologia como arma de prestígio: a disputa sobre quem chegaria primeiro na Lua.</p></div>
-    </div>
-  </section>
+        <section>
+            <h2>Momentos de Tensão Máxima</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>A Construção do Muro</h3>
+                    <p>O Muro de Berlim não foi apenas concreto, foi uma cicatriz ideológica. Representava a incapacidade de coexistência entre os sistemas, separando famílias e destinos por décadas.</p>
+                </div>
+                <div class="card">
+                    <h3>A Crise dos Mísseis</h3>
+                    <p>Em 1962, o mundo parou. Mísseis soviéticos em Cuba colocaram EUA e URSS à beira do abismo nuclear. A diplomacia foi a única barreira contra a aniquilação total.</p>
+                </div>
+                <div class="card">
+                    <h3>A Corrida Espacial</h3>
+                    <p>Mais do que explorar o céu, era uma disputa de prestígio tecnológico. Cada lançamento, do Sputnik à chegada do homem na Lua, servia como propaganda política da superioridade de cada bloco.</p>
+                </div>
+            </div>
+        </section>
 
-  <!-- PESSOA 3: FIM E LEGADO -->
-  <section>
-    <h2>O Declínio e Legado</h2>
-    <div class="grid-3" style="margin-top: 40px;">
-      <div class="card"><h3>Reformas na URSS</h3><p>Glasnost (transparência) e Perestroika (reestruturação) implementadas por Gorbachev.</p></div>
-      <div class="card"><h3>1989 e 1991</h3><p>A queda do muro e o desmantelamento total da União Soviética, encerrando a era.</p></div>
-      <div class="card"><h3>Impacto Hoje</h3><p>Como a Guerra Fria moldou as alianças globais e as tensões que vemos no mundo atual.</p></div>
-    </div>
-  </section>
-</main>
+        <section>
+            <h2>O Fim da Era</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Glasnost e Perestroika</h3>
+                    <p>Gorbachev tentou salvar o sistema soviético com "transparência" e "reestruturação", mas as mudanças acabaram dando liberdade para que as pressões internas derrubassem o regime.</p>
+                </div>
+                <div class="card">
+                    <h3>A Queda e a Unificação</h3>
+                    <p>Em 1989, o povo tomou as ruas. O Muro de Berlim caiu, simbolizando a desintegração do controle soviético na Europa e o desejo de reunificação democrática.</p>
+                </div>
+                <div class="card">
+                    <h3>Um Novo Mundo</h3>
+                    <p>A dissolução da URSS em 1991 selou o fim. O mundo passou de um sistema bipolar para uma globalização complexa, com alianças e tensões que persistem até os dias atuais.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<script>
-document.addEventListener("keydown", (e) => { if(e.key === "f") document.documentElement.requestFullscreen(); });
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
