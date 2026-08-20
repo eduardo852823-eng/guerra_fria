@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guerra Fria | Apresentação</title>
+<style>
+:root{
+  --bg:#07101c; --card:#101f33; --text:#edf5ff; --muted:#a9bad0;
+  --accent:#63b3ff; --accent2:#8b7cff; --border:rgba(255,255,255,.1);
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+.container{width:min(1100px,90%);margin:auto}
+
+/* Animações e Efeitos */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.1); opacity: 0.35; }
+}
+section {
+  padding: 70px 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(99,179,255,0.15);
+  border-color: rgba(99,179,255,0.4);
+}
+
+/* Header & Hero */
+header{position:sticky;top:0;z-index:50;background:rgba(7,16,28,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav{height:60px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;letter-spacing:1px}.logo span{color:var(--accent)}
+nav a{color:var(--muted);font-size:.85rem;margin-left:12px;transition:color 0.2s}
+nav a:hover{color:var(--accent)}
+
+.hero{min-height:75vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;width:400px;height:400px;background:var(--accent);
+  border-radius:50%;filter:blur(90px);z-index:-1;animation: pulseGlow 6s infinite ease-in-out;
+}
+h1{font-size:clamp(2.5rem,7vw,6rem);line-height:1;margin:15px 0;background:linear-gradient(90deg,#fff,#9bcaff,#a99cff);-webkit-background-clip:text;color:transparent}
+p{color:var(--muted);max-width:700px;margin:0 auto 20px}
+
+/* Elementos Gerais */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.btn{background:var(--card);color:#fff;border:1px solid var(--border);padding:10px 16px;border-radius:10px;cursor:pointer;font-weight:700;transition:all 0.2s}
+.btn.primary{background:linear-gradient(135deg,#3186d9,#6857dc);border:0}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+
+/* Timeline & Tabs */
+.timeline{position:relative;margin-top:30px;padding-left:25px;border-left:2px solid var(--accent)}
+.event{margin-bottom:25px;position:relative;transition:transform 0.3s}
+.event:hover{transform:translateX(5px)}
+.event::before{content:"";position:absolute;left:-31px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(99,179,255,0.2)}
+.year{color:#ffd166;font-weight:900;font-size:1.1rem}
+
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:15px}
+.tab{cursor:pointer;padding:8px 12px;border-radius:8px;background:var(--card);border:1px solid var(--border);color:var(--muted);transition:all 0.2s}
+.tab.active{background:#1c3859;color:#fff;border-color:var(--accent)}
+.tab-panel{display:none}
+.tab-panel.active{display:block;animation:fadeIn 0.4s ease-out}
+
+/* Quiz & Footer */
+.quiz{display:grid;gap:14px}
+.question{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+.question label{display:block;padding:6px;color:var(--muted);cursor:pointer;transition:color 0.2s}
+.question label:hover{color:#fff}
+.result{display:none;margin-top:15px;padding:15px;border-radius:10px;background:rgba(99,179,255,.1);border:1px solid var(--border)}
+footer{padding:30px 0;border-top:1px solid var(--border);color:var(--muted);text-align:center;font-size:.9rem}
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:100;width:0}
+
+/* Modo Apresentação */
+.presentation{position:fixed;inset:0;background:#03070d;z-index:200;display:none;padding:8vh 8vw;flex-direction:column;justify-content:center;text-align:center}
+.presentation.show{display:flex;animation:fadeIn 0.3s ease-out}
+.presentation .close{position:absolute;right:20px;top:20px}
+.slide{display:none}
+.slide.active{display:block;animation:fadeIn 0.4s ease}
+.slide h2{font-size:clamp(2rem,5vw,4rem);margin-bottom:15px}
+.slide p, .slide li{font-size:clamp(1rem,2vw,1.3rem);color:var(--muted)}
+.slide-controls{margin-top:30px;display:flex;justify-content:center;gap:15px;align-items:center}
+@media(max-width:768px){nav{display:none}}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<header>
+<div class="container nav">
+  <div class="logo">GUERRA<span>FRIA</span></div>
+  <nav>
+    <a href="#visao">Visão</a><a href="#origens">Origens</a><a href="#cronologia">Cronologia</a><a href="#crises">Crises</a><a href="#quiz">Quiz</a>
+  </nav>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container">
+  <div style="color:var(--accent);font-weight:800;letter-spacing:2px;font-size:.8rem">HISTÓRIA • SÉCULO XX</div>
+  <h1>GUERRA FRIA</h1>
+  <p>A disputa global entre Estados Unidos e União Soviética que moldou o mundo moderno.</p>
+  <div class="actions">
+    <a class="btn primary" href="#visao">Explorar</a>
+    <button class="btn" onclick="openPresentation()">Modo Apresentação</button>
+  </div>
+</div>
+</section>
+
+<section id="visao" class="container">
+  <h2>O que foi?</h2>
+  <p>Uma rivalidade política, econômica, tecnológica e militar (sem confronto direto em larga escala) dividindo o planeta em blocos.</p>
+  <div class="grid">
+    <div class="card"><h3>1947</h3><p>Início oficial com a Doutrina Truman e a política de contenção americana.</p></div>
+    <div class="card"><h3>1962</h3><p>Crise dos Mísseis em Cuba, o momento mais tenso da era nuclear.</p></div>
+    <div class="card"><h3>1991</h3><p>Fim formal com a dissolução da União Soviética.</p></div>
+  </div>
+</section>
+
+<section id="origens" class="container">
+  <h2>Dois Blocos</h2>
+  <div class="grid">
+    <div class="card"><h3>EUA (Capitalismo)</h3><p>Economia de mercado, democracia liberal, OTAN e Plano Marshall.</p></div>
+    <div class="card"><h3>URSS (Socialismo)</h3><p>Economia planificada, partido único, Pacto de Varsóvia e COMECON.</p></div>
+  </div>
+</section>
+
+<section id="cronologia" class="container">
+  <h2>Linha do Tempo Essencial</h2>
+  <div class="timeline">
+    <div class="event"><div class="year">1945</div><p>Fim da Segunda Guerra e ascensão das duas superpotências.</p></div>
+    <div class="event"><div class="year">1949</div><p>Criação da OTAN e teste da primeira bomba atômica soviética.</p></div>
+    <div class="event"><div class="year">1961</div><p>Construção do Muro de Berlim.</p></div>
+    <div class="event"><div class="year">1969</div><p>Missão Apollo 11: o homem chega à Lua.</p></div>
+    <div class="event"><div class="year">1989</div><p>Queda do Muro de Berlim.</p></div>
+    <div class="event"><div class="year">1991</div><p>Fim da URSS.</p></div>
+  </div>
+</section>
+
+<section id="crises" class="container">
+  <h2>Principais Crises</h2>
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('berlim',this)">Berlim</button>
+    <button class="tab" onclick="showTab('cuba',this)">Cuba</button>
+    <button class="tab" onclick="showTab('coreia',this)">Coreia</button>
+  </div>
+  <div id="berlim" class="tab-panel active card"><h3>Berlim</h3><p>A cidade dividida virou o principal palco e símbolo físico da Cortina de Ferro.</p></div>
+  <div id="cuba" class="tab-panel card"><h3>Cuba (1962)</h3><p>Mísseis nucleares soviéticos na ilha quase desencadearam a Terceira Guerra Mundial.</p></div>
+  <div id="coreia" class="tab-panel card"><h3>Coreia (1950-1953)</h3><p>Guerra indireta que resultou na divisão permanente da penilha coreana.</p></div>
+</section>
+
+<section id="quiz" class="container">
+  <h2>Quiz Rápido</h2>
+  <div class="quiz">
+    <div class="question"><b>1. Quais foram as superpotências rivais?</b><label><input type="radio" name="q1" value="a"> A) Reino Unido e Alemanha</label><label><input type="radio" name="q1" value="b"> B) EUA e URSS</label></div>
+    <div class="question"><b>2. Em que ano caiu o Muro de Berlim?</b><label><input type="radio" name="q2" value="a"> A) 1989</label><label><input type="radio" name="q2" value="b"> B) 1991</label></div>
+    <button class="btn primary" onclick="checkQuiz()">Ver Resultado</button>
+    <div class="result" id="result"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+  <p>Guerra Fria | Material Escolar Otimizado</p>
+</div>
+</footer>
+
+<div class="presentation" id="presentation">
+<button class="btn close" onclick="closePresentation()">Fechar</button>
+<div class="slide active"><h2>Guerra Fria</h2><p>A rivalidade global entre EUA e URSS (1945 - 1991).</p></div>
+<div class="slide"><h2>Capitalismo vs Socialismo</h2><p>Dois modelos econômicos e políticos disputando a influência mundial.</p></div>
+<div class="slide"><h2>Momentos Críticos</h2><p>Crise dos Mísseis em Cuba e a divisão de Berlim marcaram o período.</p></div>
+<div class="slide"><h2>O Fim</h2><p>Com as reformas na URSS e a queda do muro, o bloco socialista se dissolveu em 1991.</p></div>
+<div class="slide-controls">
+  <button class="btn" onclick="prevSlide()">Anterior</button>
+  <span id="slideCounter">1 / 4</span>
+  <button class="btn primary" onclick="nextSlide()">Próximo</button>
+</div>
+</div>
+
+<script>
+const slides = [...document.querySelectorAll('.slide')]; let current = 0;
+function openPresentation(){document.getElementById('presentation').classList.add('show'); current=0; updateSlide();}
+function closePresentation(){document.getElementById('presentation').classList.remove('show');}
+function updateSlide(){slides.forEach((s,i)=>s.classList.toggle('active', i===current)); document.getElementById('slideCounter').textContent = (current+1) + ' / ' + slides.length;}
+function nextSlide(){current=(current+1)%slides.length; updateSlide();}
+function prevSlide(){current=(current-1+slides.length)%slides.length; updateSlide();}
+
+function showTab(id, btn){
+  document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  document.getElementById(id).classList.add('active'); btn.classList.add('active');
+}
+
+function checkQuiz(){
+  const ans = {q1:'b', q2:'a'}; let score = 0;
+  for(let q in ans){ const ch = document.querySelector(`input[name="${q}"]:checked`); if(ch && ch.value===ans[q]) score++; }
+  const r = document.getElementById('result'); r.style.display='block';
+  r.innerHTML = `<strong>Acertos: ${score}/2</strong>. ${score === 2 ? 'Excelente! Pronto para apresentar.' : 'Revise os pontos principais!'}`;
+}
+
+window.addEventListener('scroll', ()=>{
+  const h = document.documentElement;
+  document.getElementById('progress').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+});
+</script>
+</body>
+</html>
